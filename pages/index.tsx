@@ -1,7 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import ShopHeader from "../components/ShopHeader";
+import ShopHeader from "../components/ShopHeader"
+import {products} from "../lib/products"
+import ProductCard from "../components/ProductCard";
 
 const Home: NextPage = () => {
   return (
@@ -13,9 +15,12 @@ const Home: NextPage = () => {
       </Head>
       <ShopHeader/>
       <main >
-        <h1 >
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+
+        <div className="grid grid-cols-3 gap-4 p-4 mx-auto">
+          {products.map((product, id) => (
+            <ProductCard key={id} name={product.name} url={product.url} price={product.price}/>
+          ))}
+        </div>
       </main>
     </div>
   )
