@@ -2,8 +2,13 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from "../components/Header";
+import useUser from "../utils/useUser";
 
-const Home: NextPage = () => {
+const Admin: NextPage = () => {
+  const { user } = useUser({
+    redirectTo: "/login",
+  });
+
   return (
     <div>
       <Head>
@@ -12,13 +17,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header/>
-      <main >
-        <h1 >
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+      <main>
+        <h1>
+          Admin Console
         </h1>
       </main>
     </div>
   )
 }
 
-export default Home
+export default Admin
