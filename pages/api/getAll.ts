@@ -19,9 +19,8 @@ export default async function handler(
     await connectMongo();
     console.log('CONNECTED TO MONGO');
 
-    console.log('Getting all Orders...');
-    const order = await Order.create(req.body);
-    console.log('Orders Retrieved!');
+    const order = await Order.find({})
+    console.log('CREATED DOCUMENT');
 
     res.json({ order });
   } catch (error) {
