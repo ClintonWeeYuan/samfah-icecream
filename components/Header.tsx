@@ -14,7 +14,7 @@ export default function Header(){
     router.push("/login");
   }
   return(
-    <header>
+    <header >
       <button onClick={logOut}>Log Out</button>
     </header>
   )
