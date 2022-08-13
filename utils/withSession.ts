@@ -1,15 +1,11 @@
-import { withIronSessionApiRoute, withIronSessionSsr } from "iron-session/next";
-import {
-  GetServerSidePropsContext,
-  GetServerSidePropsResult,
-  NextApiHandler,
-} from "next";
+import {withIronSessionApiRoute, withIronSessionSsr} from "iron-session/next";
+import {GetServerSidePropsContext, GetServerSidePropsResult, NextApiHandler,} from "next";
 
 declare module "iron-session" {
   interface IronSessionData {
     user?: {
       isLoggedIn: boolean;
-      admin?: boolean;
+      name: string;
     };
   }
 }
@@ -28,8 +24,7 @@ export function withSessionRoute(handler: NextApiHandler) {
 }
 
 // Theses types are compatible with InferGetStaticPropsType https://nextjs.org/docs/basic-features/data-fetching#typescript-use-getstaticprops
-export function withSessionSsr<
-  P extends { [key: string]: unknown } = { [key: string]: unknown },
+export function withSessionSsr<P extends { [key: string]: unknown } = { [key: string]: unknown },
   >(
   handler: (
     context: GetServerSidePropsContext,

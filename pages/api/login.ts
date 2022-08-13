@@ -6,11 +6,13 @@ async function loginRoute(req: NextApiRequest, res: NextApiResponse) {
   const { username, password } = await req.body;
   const CREDENTIALS_USERNAME = process.env.CREDENTIALS_USERNAME || "";
   const CREDENTIALS_PASSWORD = process.env.CREDENTIALS_PASSWORD || "";
+  console.log(username);
+  console.log(password);
   try{
     if(username == CREDENTIALS_USERNAME && password ==  CREDENTIALS_PASSWORD){
       req.session.user = {
         isLoggedIn: true,
-        admin: true,
+        name: "admin",
       };
       await req.session.save();
       res.send({ok: true});
@@ -20,7 +22,6 @@ async function loginRoute(req: NextApiRequest, res: NextApiResponse) {
   } catch(e){
     res.status(500).json({error: (e as Error).message})
   }
-
 }
 
 
