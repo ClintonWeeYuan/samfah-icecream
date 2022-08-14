@@ -13,7 +13,7 @@ const ProductCard: FC<Props> = ({name, url, price}) => {
       <img className="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
            src={url} alt=""/>
       <div className="flex flex-col justify-between p-4 leading-normal">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{name}</h5>
+        <h4 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{name}</h4>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{price}</p>
         <button
           className="inline-flex justify-center items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
