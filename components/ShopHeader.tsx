@@ -1,5 +1,6 @@
 import Image from "next/image"
 import ProductSearch from "./ProductSearch";
+import Basket from "../components/Basket";
 
 export default function ShopHeader() {
   return (
@@ -69,8 +70,9 @@ export default function ShopHeader() {
             </li>
           </ul>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:flex flex-row items-center">
           <ProductSearch/>
+          <Basket/>
         </div>
       </div>
     </nav>
