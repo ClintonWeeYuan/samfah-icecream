@@ -4,6 +4,7 @@ import Image from 'next/image'
 import ShopHeader from "../components/ShopHeader"
 import {products} from "../lib/products"
 import ProductCard from "../components/ProductCard";
+import Sidebar from "../components/Sidebar"
 
 const Home: NextPage = () => {
   return (
@@ -14,9 +15,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/samfah-logo.jpg" />
       </Head>
       <ShopHeader/>
-      <main >
-
-        <div className="grid grid-cols-3 gap-4 p-4 mx-auto">
+      <main className="grid grid-cols-1 md:grid-cols-5">
+        <div className="col-span-1 p-4">
+          <label htmlFor="first_name" className="block mb-2 pl-2 text-sm font-medium text-blue-600 dark:text-gray-300">SEARCH PRODUCT CATEGORIES</label>
+          <Sidebar/>
+        </div>
+        <div className="col-span-1 md:col-span-4 grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4 p-4 mx-auto">
           {products.map((product, id) => (
             <ProductCard key={id} name={product.name} url={product.url} price={product.price}/>
           ))}
