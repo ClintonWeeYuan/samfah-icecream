@@ -17,7 +17,10 @@ export default function Basket() {
                 ${open ? '' : 'text-opacity-90'}
                 group inline-flex items-center rounded-md bg-orange-700 px-3 py-3.5 text-base font-medium text-white hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
-            <span>Basket</span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+  <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+</svg></span>
             <ChevronDownIcon
               className={`${open ? '' : 'text-opacity-70'}
                   ml-2 h-5 w-5 text-orange-300 transition duration-150 ease-in-out group-hover:text-opacity-80`}
@@ -44,7 +47,7 @@ export default function Basket() {
                       className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                     >
                       <div className="ml-4 flex items-center">
-                        <img className="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-20 md:rounded-none md:rounded-l-lg"
+                        <img className="object-cover w-20  h-30 rounded-t-lg md:h-auto md:w-full md:h-40 md:rounded-none md:rounded-l-lg"
                              src={item.image} alt=""/>
                         <div className="flex flex-col ml-5">
                         <p className="text-md font-medium text-orange-400">
