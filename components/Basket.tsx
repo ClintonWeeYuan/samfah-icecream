@@ -2,10 +2,11 @@ import {Popover, Transition} from '@headlessui/react'
 import {ChevronDownIcon} from '@heroicons/react/solid'
 import {Fragment} from 'react'
 import {useBasketContext} from "./BasketContext";
+import {useRouter} from "next/router";
 
 export default function Basket() {
   const basket = useBasketContext().basket;
-
+  const router = useRouter();
   const total = basket.reduce((a: number, b) => a + parseFloat(b.price.substring(2)) * b.quantity, 0)
 
   return (
@@ -66,6 +67,7 @@ export default function Basket() {
                 </div>
                 <div className="bg-gray-50 p-4">
                     <button
+                      onClick={() => router.push("/checkout")}
                       className="inline-flex justify-center items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                       Check Out
                     </button>

@@ -1,8 +1,11 @@
 import Image from "next/image"
 import ProductSearch from "./ProductSearch";
 import Basket from "../components/Basket";
+import {useRouter} from "next/router"
 
 export default function ShopHeader() {
+
+
   return (
     <nav className="py-4 px-8 border-gray-200 dark:bg-gray-900 dark:border-gray-700">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
@@ -19,6 +22,7 @@ export default function ShopHeader() {
             </li>
             <li>
               <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+
                       className="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Office Product <svg
                 className="ml-1 w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
