@@ -25,7 +25,7 @@ export default function Login() {
   }
 
   return (
-    <div className="max-w-lg h-screen flex justify-center items-center mx-auto">
+    <div className="max-w-lg px-10 h-screen flex justify-center mt-20 md:mt-0 md:items-center mx-auto">
       <form onSubmit={handleSubmit} className="w-full">
         <div className="mb-6">
           <label htmlFor="username" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Username</label>

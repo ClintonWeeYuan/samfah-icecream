@@ -3,6 +3,17 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import connectMongo from "../../utils/connectMongo";
 import OrderBox from "../../models/Order"
 
+type Order = {
+  orderName: string,
+  orderQuantity: number,
+  price: string,
+}
+
+type OrderBox = {
+  orders: Order[],
+  name: string,
+  email: string,
+}
 
 export default async function handler(
   req: NextApiRequest,
@@ -13,10 +24,11 @@ export default async function handler(
     await connectMongo();
     console.log('CONNECTED TO MONGO');
 
-    const orders = await OrderBox.find({})
-    console.log('Retrieved Orders');
+    console.log('Deleting Order...');
+    const order = await OrderBox.findOneAndDelete({name: req.body.name});
+    console.log('Order Deleted!');
 
-    res.json({ orders });
+    res.json({ order });
   } catch (error) {
     console.log(error);
     res.json({ error });
