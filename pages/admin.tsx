@@ -28,7 +28,7 @@ const Admin: NextPage = () => {
         <link rel="icon" href="/samfah-logo.jpg" />
       </Head>
       <Header/>
-      <main className="p-4">
+      <main className="px-2 md:px-16 py-5">
         <AdminTable orders={data}/>
       </main>
     </div>

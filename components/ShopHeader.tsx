@@ -2,6 +2,7 @@ import Image from "next/image"
 import ProductSearch from "./ProductSearch";
 import Basket from "../components/Basket";
 import {useRouter} from "next/router"
+import Link from "next/link"
 
 export default function ShopHeader() {
 
@@ -9,9 +10,12 @@ export default function ShopHeader() {
   return (
     <nav className="py-4 px-8 border-gray-200 dark:bg-gray-900 dark:border-gray-700">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
-        <a href="#" className="flex items-center">
-          <Image src="/logo.png" width={160} height={50} alt="Flowbite Logo"/>
-        </a>
+
+        <Link href="/" className="flex items-center cursor-pointer">
+          <div className="cursor-pointer">
+          <Image src="/logo.png" width={160} height={50} alt="Samfah Logo"/>
+          </div>
+        </Link>
         <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
           <ul
             className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
