@@ -2,6 +2,8 @@
 import {withSessionRoute} from "../../utils/withSession";
 import {NextApiRequest, NextApiResponse} from "next";
 
+
+
 export type User = {
   isLoggedIn: boolean;
   name: string;
@@ -24,3 +26,4 @@ function userRoute(req :NextApiRequest, res :NextApiResponse) {
 }
 
 export default withSessionRoute(userRoute);
+

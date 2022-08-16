@@ -14,8 +14,9 @@ export default function Header(){
     router.push("/login");
   }
   return(
-    <header >
-      <button onClick={logOut}>Log Out</button>
+    <header className="p-4 flex justify-between" >
+      <h1 className="text-2xl">Admin Console</h1>
+      <button className="inline-flex justify-center items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={logOut}>Log Out</button>
     </header>
   )
 }

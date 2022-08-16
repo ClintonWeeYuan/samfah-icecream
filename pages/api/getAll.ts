@@ -1,14 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import connectMongo from "../../utils/connectMongo";
-import Order from "../../models/Order"
+import OrderBox from "../../models/Order"
 
-type Order = {
-  orderName: string,
-  orderQuantity: number,
-  name: string,
-  email: string,
-}
 
 export default async function handler(
   req: NextApiRequest,
@@ -19,10 +13,10 @@ export default async function handler(
     await connectMongo();
     console.log('CONNECTED TO MONGO');
 
-    const order = await Order.find({})
-    console.log('CREATED DOCUMENT');
+    const orders = await OrderBox.find({})
+    console.log('Retrieved Orders');
 
-    res.json({ order });
+    res.json({ orders });
   } catch (error) {
     console.log(error);
     res.json({ error });
