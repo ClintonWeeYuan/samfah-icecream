@@ -1,4 +1,4 @@
-import {FC} from "react"
+import {FC, useState} from "react"
 import {useSWRConfig} from "swr"
 import axios from "axios";
 
@@ -23,10 +23,13 @@ interface Props {
 
 const AdminTable: FC<Props> = ({orders}) => {
   const {mutate} = useSWRConfig();
+  const [loading, setLoading] = useState(false);
 
   async function removeElement(name: string) {
+    setLoading(true);
     await axios.post("/api/remove", {name})
     await ("/api/getAll");
+    setLoading(false);
   }
 
   return (
@@ -64,6 +67,7 @@ const AdminTable: FC<Props> = ({orders}) => {
             </td>
             <td className="py-4 px-6 text-right">
               <button onClick={() => removeElement(order.name)}
+                      disabled={loading}
                       className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Remove
               </button>
             </td>
