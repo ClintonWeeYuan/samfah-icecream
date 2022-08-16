@@ -9,16 +9,25 @@ const OrderSchema = new Schema({
     type: Number,
     required: true,
   },
-  name: {
+  price: {
     required: true,
     type: String,
   },
-  email: {
+})
+
+const OrderBoxSchema = new Schema({
+  orders: [OrderSchema],
+  name: {
+    required: true,
+    type: String
+  },
+  email : {
+    required: true,
     type: String,
-    required: true
   }
 })
 
 const Order = models.Order || model('Order', OrderSchema);
+const OrderBox = models.OrderBox || model('OrderBox', OrderBoxSchema);
 
-export default Order;
+export default OrderBox;
