@@ -27,7 +27,7 @@ const ProductCard: FC<Props> = ({name, url, price}) => {
       <div className="flex flex-col justify-between p-4 leading-normal">
         <h4 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{name}</h4>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{price}</p>
-        <form onSubmit={() => {handleBasket({name: name, quantity: quantity, status: "Pending", image: url, price: price})}}>
+        <form onSubmit={(e) => {e.preventDefault(); handleBasket({name: name, quantity: quantity, status: "Pending", image: url, price: price})}}>
           <input onChange={(e) => {setQuantity(parseInt(e.target.value))}} type="number" min="0" id="first_name"
                  className="bg-gray-50 border mb-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                  placeholder="Quantity" required/>
